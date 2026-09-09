@@ -30,7 +30,7 @@ El proyecto incluye configuraciones listas para ejecutar:
 
 ## 📂 Estructura del proyecto
 
-#####Test
+---
 
 ```text
 .github/               # Contiene los workflows de GitHub Actions (CI/CD)
