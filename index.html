@@ -34,16 +34,21 @@
         var res;
         switch (op) {
           case '+':
-            res = window.sum(a, b);
+            res = typeof window.sum === 'function' ? window.sum(a, b) : (a + b);
             break;
           case '-':
-            res = window.subtract(a, b);
+            res = typeof window.subtract === 'function' ? window.subtract(a, b) : (a - b);
             break;
           case '*':
-            res = window.multiply(a, b);
+            res = typeof window.multiply === 'function' ? window.multiply(a, b) : (a * b);
             break;
           case '/':
-            res = window.divide(a, b);
+            if (typeof window.divide === 'function') {
+              res = window.divide(a, b);
+            } else {
+              if (b === 0) throw new Error("Division by zero");
+              res = a / b;
+            }
             break;
           default:
             res = 'Unknown operation';
